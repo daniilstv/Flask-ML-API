@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 import pickle
-from xgboost import XGBClassifier
+# from xgboost import XGBClassifier
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 print('xgboost version ',xgb.__version__)
@@ -13,7 +13,7 @@ import traceback
 from logging.handlers import RotatingFileHandler
 from time import strftime, time
 
-file_name = "/Users/daniilstv/git/Flask-ML-API/model.pkl"
+file_name = "model_.pkl"
 xgb_model_loaded = pickle.load(open(file_name, "rb"))
 
 app = Flask(__name__)

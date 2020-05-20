@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 def map_for_dict_Gender(Gender):
     dict_Gender = {'Male': 0, 'Female': 1}
     res = dict_Gender.get(Gender)

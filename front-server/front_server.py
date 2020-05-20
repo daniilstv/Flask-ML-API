@@ -57,6 +57,5 @@ def predict_form():
         return redirect(url_for('predicted', response=response))
     return render_template('form.html', form=form)
 
-
 if __name__ == '__main__':
     app.run(host='127.0.0.2', debug=True)
