@@ -1,6 +1,6 @@
 from flask import json
 
-from app import app
+from app3 import app
 
 test_data = {
     "ID": 1,

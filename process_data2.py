@@ -75,25 +75,39 @@ def f_VehUsage_Professional_run(VehUsage):
 
 def process_input(json_input):
 
-    columns_list =['LicAge', 'Gender', 'MariStat', 'DrivAge', 'HasKmLimit', 'BonusMalus',
-     'OutUseNb', 'RiskArea', 'VehUsage_Private',
-     'VehUsage_Private+trip to office', 'VehUsage_Professional',
-     'VehUsage_Professional run', 'SocioCateg_CSP1', 'SocioCateg_CSP2',
-     'SocioCateg_CSP3', 'SocioCateg_CSP4', 'SocioCateg_CSP5',
-     'SocioCateg_CSP6', 'SocioCateg_CSP7', 'DrivAgeSq']
+    columns_list =[ "LicAge",
+ "Gender",
+ "MariStat",
+ "DrivAge",
+ "HasKmLimit",
+ "BonusMalus",
+ "OutUseNb",
+ "RiskArea",
+ "VehUsage_Private",
+ "VehUsage_Private+trip to office",
+ "VehUsage_Professional",
+ "VehUsage_Professional run",
+ "SocioCateg_CSP1",
+ "SocioCateg_CSP2",
+ "SocioCateg_CSP3",
+ "SocioCateg_CSP4",
+ "SocioCateg_CSP5",
+ "SocioCateg_CSP6",
+ "SocioCateg_CSP7",
+ "DrivAgeSq"]
 
-    LicAge = json_input["LicAge"]
-    Gender = map_for_dict_Gender(json_input["Gender"])
-    MariStat = map_for_dict_MariStat(json_input["MariStat"])
-    DrivAge = json_input["DrivAge"]
-    HasKmLimit = json_input["HasKmLimit"]
-    BonusMalus = json_input["BonusMalus"]
-    OutUseNb = json_input["OutUseNb"]
-    RiskArea = json_input["RiskArea"]
-    VehUsg_Private = f_VehUsage_Private(json_input["VehUsage"])
-    VehUsg_Private_trip_to_office = f_VehUsage_Private_trip_to_office(json_input["VehUsage"])
-    VehUsg_Professional = f_VehUsage_Professional(json_input["VehUsage"])
-    VehUsg_Professional_run = f_VehUsage_Professional_run(json_input["VehUsage"])
+    # LicAge = json_input["LicAge"]
+    # Gender = map_for_dict_Gender(json_input["Gender"])
+    # MariStat = map_for_dict_MariStat(json_input["MariStat"])
+    # DrivAge = json_input["DrivAge"]
+    # HasKmLimit = json_input["HasKmLimit"]
+    # BonusMalus = json_input["BonusMalus"]
+    # OutUseNb = json_input["OutUseNb"]
+    # RiskArea = json_input["RiskArea"]
+    # VehUsg_Private = f_VehUsage_Private(json_input["VehUsage"])
+    # VehUsg_Private_trip_to_office = f_VehUsage_Private_trip_to_office(json_input["VehUsage"])
+    # VehUsg_Professional = f_VehUsage_Professional(json_input["VehUsage"])
+    # VehUsg_Professional_run = f_VehUsage_Professional_run(json_input["VehUsage"])
 
 
     CSP1 = 0
@@ -104,20 +118,20 @@ def process_input(json_input):
     CSP6 = 0
     CSP7 = 0
 
-    DrivAgeSq = json_input["DrivAge"] ** 2
+    # DrivAgeSq = json_input["DrivAge"] ** 2
+
+    data_list = json_input
+
+    # data_list=[(LicAge, Gender,  MariStat, DrivAge,
+    #            HasKmLimit, BonusMalus, OutUseNb, RiskArea,
+    #            VehUsg_Private, VehUsg_Private_trip_to_office,
+    #            VehUsg_Professional, VehUsg_Professional_run,
+    #            CSP1, CSP2, CSP3, CSP4, CSP5, CSP6, CSP7,
+    #            DrivAgeSq)]
 
 
+    print('data_list:' , data_list)
 
-    data_list=[(LicAge, Gender,  MariStat, DrivAge,
-               HasKmLimit, BonusMalus, OutUseNb, RiskArea,
-               VehUsg_Private, VehUsg_Private_trip_to_office,
-               VehUsg_Professional, VehUsg_Professional_run,
-               CSP1, CSP2, CSP3, CSP4, CSP5, CSP6, CSP7,
-               DrivAgeSq)]
-
-
-    print(data_list)
-
-    df = pd.DataFrame.from_records(data_list, columns=columns_list)
-
+    df = pd.DataFrame.from_records(data_list, columns=columns_list, index=[0])
+    print('DataFrame:', df)
     return df

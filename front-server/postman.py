@@ -1,20 +1,26 @@
 import requests
 
 data = {
-    "ID": 1,
-    "LicAge": 468,
-    "RecordBeg": "2004-01-01",
-    "RecordEnd": "",
-    "VehAge": "",
-    "Gender": "Male",
-    "MariStat": "Other",
-    "SocioCateg": "CSP50",
-    "VehUsage": "Private",
-    "DrivAge": 67,
-    "HasKmLimit": 0,
-    "BonusMalus": 56,
-    "OutUseNb": 0,
-    "RiskArea": 0
+ "LicAge":35,
+ "Gender":1,
+ "MariStat":0,
+ "DrivAge":25,
+ "HasKmLimit":0,
+ "BonusMalus":50,
+ "OutUseNb":0,
+ "RiskArea":0,
+ "VehUsage_Private":0,
+ "VehUsage_Private+trip to office":0,
+ "VehUsage_Professional":0,
+ "VehUsage_Professional run":0,
+ "SocioCateg_CSP1":0,
+ "SocioCateg_CSP2":0,
+ "SocioCateg_CSP3":0,
+ "SocioCateg_CSP4":2,
+ "SocioCateg_CSP5":0,
+ "SocioCateg_CSP6":0,
+ "SocioCateg_CSP7":0,
+ "DrivAgeSq":234
 }
 
 
